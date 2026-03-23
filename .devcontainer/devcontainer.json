@@ -9,8 +9,6 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "marp-team.marp-vscode",
-        "anthropic.claude-code",
         "ms-vscode.live-server",
         "MS-CEINTL.vscode-language-pack-ja",
         "GitHub.copilot-chat",
