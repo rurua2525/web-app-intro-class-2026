@@ -117,6 +117,7 @@ def update_todo(todo_id: int, todo: TodoUpdate):
         #     existing = cursor.fetchone()
         #     if existing is None:
         #         raise HTTPException(status_code=404, detail="TODO not found")
+        #   （existing["title"] は後段でレスポンスに含めるのに使います）
 
         # TODO(実習4): パラメータバインディングに修正してください
         #   修正後:
@@ -129,6 +130,8 @@ def update_todo(todo_id: int, todo: TodoUpdate):
         )
 
         conn.commit()
+        # API設計書に合わせて title も返す
+        # return {"id": todo_id, "title": existing["title"], "done": todo.done}
         return {"id": todo_id, "done": todo.done}
 
 

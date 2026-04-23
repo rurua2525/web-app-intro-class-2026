@@ -65,7 +65,7 @@ def root():
 
 # GET /todos - TODO一覧取得（実装済み）
 @app.get("/todos")
-def list_todos():
+def get_todos():
     """全てのTODOをリストで返す"""
     conn = get_db()
     cursor = conn.cursor()

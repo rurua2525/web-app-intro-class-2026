@@ -107,7 +107,7 @@ def update_todo(todo_id: int, todo: TodoUpdate):
             (int(todo.done), todo_id),
         )
         conn.commit()
-        return {"id": todo_id, "done": todo.done}
+        return {"id": todo_id, "title": existing["title"], "done": todo.done}
 
 
 @app.delete("/todos/{todo_id}")

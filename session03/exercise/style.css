@@ -123,6 +123,14 @@ body {
 
 
 
+/* --- 10. 空メッセージ ---
+   ヒント: TODOが0件のときに表示するメッセージ
+           text-align: center, padding: 32px, color: #9ca3af, font-size: 14px */
+
+.empty-message {
+}
+
+
 /* --- 11. ページフッター --- */
 
 .footer {

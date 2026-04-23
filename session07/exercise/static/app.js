@@ -3,7 +3,7 @@
 // 第7回: フロントエンドとバックエンドの結合
 //
 // 第4回の正解をベースに、fetch API でサーバーと通信します。
-// GET は実装済み。POST / PUT / DELETE を実装してください。
+// GET / POST は実装済み。PUT / DELETE を実装してください。
 // =====================================================
 
 // -----------------------------------------------------
@@ -77,6 +77,7 @@ async function deleteTodo(id) {
 
 // -----------------------------------------------------
 // TODO一覧をDOMに描画する — 実装済み
+// 第3回・第4回と同じく <label> で checkbox + span を包む構造にする
 // -----------------------------------------------------
 function renderTodos(todos) {
   const todoList = document.getElementById("todo-list");
@@ -85,6 +86,10 @@ function renderTodos(todos) {
   todos.forEach(function (todo) {
     const li = document.createElement("li");
     li.className = "todo-item" + (todo.done ? " done" : "");
+
+    // label（checkbox + タイトルを一体化。クリック範囲が広がる）
+    const label = document.createElement("label");
+    label.className = "todo-label";
 
     // チェックボックス
     const checkbox = document.createElement("input");
@@ -100,7 +105,10 @@ function renderTodos(todos) {
     titleSpan.className = "todo-title";
     titleSpan.textContent = todo.title;
 
-    // 削除ボタン
+    label.appendChild(checkbox);
+    label.appendChild(titleSpan);
+
+    // 削除ボタン（label の外に置く）
     const deleteBtn = document.createElement("button");
     deleteBtn.className = "delete-button";
     deleteBtn.textContent = "削除";
@@ -108,8 +116,7 @@ function renderTodos(todos) {
       deleteTodo(todo.id);
     });
 
-    li.appendChild(checkbox);
-    li.appendChild(titleSpan);
+    li.appendChild(label);
     li.appendChild(deleteBtn);
     todoList.appendChild(li);
   });
@@ -119,12 +126,9 @@ function renderTodos(todos) {
 // -----------------------------------------------------
 // イベントリスナー
 // -----------------------------------------------------
-document.getElementById("add-button").addEventListener("click", addTodo);
-
-document.getElementById("todo-input").addEventListener("keydown", function (e) {
-  if (e.key === "Enter") {
-    addTodo();
-  }
+document.getElementById("todo-form").addEventListener("submit", function (e) {
+  e.preventDefault();
+  addTodo();
 });
 
 // ページ読み込み時にTODO一覧を取得
