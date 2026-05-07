@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 280" font-family="'Hiragino Sans', 'Yu Gothic', 'Meiryo', 'Noto Sans CJK JP', sans-serif">
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#60a5fa"/>
+    </marker>
+  </defs>
+
+  <rect x="20" y="40" width="220" height="200" rx="10" fill="#1e3a8a" stroke="#3b82f6" stroke-width="2"/>
+  <text x="130" y="120" text-anchor="middle" fill="#dbeafe" font-size="16" font-weight="bold" font-family="'Menlo','Consolas',monospace">http://localhost</text>
+  <text x="130" y="150" text-anchor="middle" fill="#dbeafe" font-size="16" font-weight="bold" font-family="'Menlo','Consolas',monospace">:5500</text>
+  <text x="130" y="190" text-anchor="middle" fill="#93c5fd" font-size="18" font-weight="bold">フロントエンド</text>
+
+  <rect x="360" y="40" width="220" height="200" rx="10" fill="#155e75" stroke="#06b6d4" stroke-width="2"/>
+  <text x="470" y="120" text-anchor="middle" fill="#cffafe" font-size="16" font-weight="bold" font-family="'Menlo','Consolas',monospace">http://localhost</text>
+  <text x="470" y="150" text-anchor="middle" fill="#cffafe" font-size="16" font-weight="bold" font-family="'Menlo','Consolas',monospace">:8000</text>
+  <text x="470" y="190" text-anchor="middle" fill="#93c5fd" font-size="18" font-weight="bold">バックエンド</text>
+
+  <line x1="245" y1="130" x2="355" y2="130" stroke="#60a5fa" stroke-width="2.5" marker-start="url(#arrow-blue)" marker-end="url(#arrow-blue)"/>
+  <text x="300" y="118" text-anchor="middle" fill="#f87171" font-size="16" font-weight="bold">CORS必要</text>
+</svg>

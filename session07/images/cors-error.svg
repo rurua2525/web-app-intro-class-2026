@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 540" font-family="'Hiragino Sans', 'Yu Gothic', 'Meiryo', 'Noto Sans CJK JP', sans-serif">
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#60a5fa"/>
+    </marker>
+    <marker id="arrow-slate" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+
+  <rect x="80" y="20" width="400" height="60" rx="6" fill="#1e3a8a" stroke="#3b82f6" stroke-width="2"/>
+  <text x="280" y="58" text-anchor="middle" fill="#dbeafe" font-size="20" font-weight="bold">ブラウザ（localhost:5500）</text>
+
+  <rect x="800" y="20" width="400" height="60" rx="6" fill="#155e75" stroke="#06b6d4" stroke-width="2"/>
+  <text x="1000" y="58" text-anchor="middle" fill="#cffafe" font-size="20" font-weight="bold">サーバー（localhost:8000）</text>
+
+  <line x1="280" y1="80" x2="280" y2="520" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <line x1="1000" y1="80" x2="1000" y2="520" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 4"/>
+
+  <rect x="60" y="100" width="440" height="80" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="280" y="130" text-anchor="middle" fill="#451a03" font-size="16" font-weight="bold">fetch("/todos") を実行</text>
+  <text x="280" y="158" text-anchor="middle" fill="#451a03" font-size="16" font-weight="bold">オリジンが違う！許可を確認しよう</text>
+
+  <line x1="280" y1="220" x2="998" y2="220" stroke="#60a5fa" stroke-width="2.5" marker-end="url(#arrow-blue)"/>
+  <text x="640" y="208" text-anchor="middle" fill="#93c5fd" font-size="18" font-weight="bold">プリフライトリクエスト（OPTIONS /todos）</text>
+
+  <rect x="780" y="240" width="440" height="60" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="1000" y="278" text-anchor="middle" fill="#451a03" font-size="16" font-weight="bold">CORSの設定？何も設定してないよ</text>
+
+  <line x1="1000" y1="340" x2="282" y2="340" stroke="#94a3b8" stroke-width="2.5" stroke-dasharray="10 6" marker-end="url(#arrow-slate)"/>
+  <text x="640" y="328" text-anchor="middle" fill="#cbd5e1" font-size="18" font-weight="bold">レスポンス（許可ヘッダなし）</text>
+
+  <rect x="40" y="370" width="480" height="120" rx="8" fill="#7f1d1d" stroke="#dc2626" stroke-width="2"/>
+  <text x="280" y="402" text-anchor="middle" fill="#fecaca" font-size="16" font-weight="bold">許可されてない！通信をブロック！</text>
+  <text x="280" y="438" text-anchor="middle" fill="#fecaca" font-size="16" font-weight="bold" font-family="'Menlo','Consolas',monospace">Console: "CORS error"</text>
+</svg>

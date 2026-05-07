@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 460" font-family="'Hiragino Sans', 'Yu Gothic', 'Meiryo', 'Noto Sans CJK JP', sans-serif">
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#60a5fa"/>
+    </marker>
+    <marker id="arrow-emerald" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#34d399"/>
+    </marker>
+  </defs>
+
+  <rect x="60" y="20" width="480" height="100" rx="10" fill="#1e3a8a" stroke="#3b82f6" stroke-width="2"/>
+  <text x="300" y="60" text-anchor="middle" fill="#dbeafe" font-size="22" font-weight="bold">JavaScript</text>
+  <text x="300" y="92" text-anchor="middle" fill="#dbeafe" font-size="20">fetch() でデータ送信</text>
+
+  <line x1="220" y1="120" x2="220" y2="180" stroke="#60a5fa" stroke-width="2.5" marker-end="url(#arrow-blue)"/>
+  <text x="170" y="155" text-anchor="middle" fill="#93c5fd" font-size="16" font-weight="bold">HTTP</text>
+
+  <line x1="380" y1="180" x2="380" y2="120" stroke="#34d399" stroke-width="2.5" stroke-dasharray="8 5" marker-end="url(#arrow-emerald)"/>
+  <text x="430" y="155" text-anchor="middle" fill="#a7f3d0" font-size="16" font-weight="bold">HTTP</text>
+
+  <rect x="60" y="180" width="480" height="120" rx="10" fill="#155e75" stroke="#06b6d4" stroke-width="2"/>
+  <text x="300" y="220" text-anchor="middle" fill="#cffafe" font-size="22" font-weight="bold">FastAPI</text>
+  <text x="300" y="260" text-anchor="middle" fill="#cffafe" font-size="18">受け取ったデータをDBに保存</text>
+
+  <line x1="300" y1="300" x2="300" y2="340" stroke="#60a5fa" stroke-width="2.5" marker-end="url(#arrow-blue)"/>
+
+  <rect x="60" y="340" width="480" height="110" rx="10" fill="#064e3b" stroke="#10b981" stroke-width="2"/>
+  <text x="300" y="378" text-anchor="middle" fill="#a7f3d0" font-size="22" font-weight="bold">SQLite</text>
+  <text x="300" y="406" text-anchor="middle" fill="#a7f3d0" font-size="18">ファイルに永続化</text>
+  <text x="300" y="432" text-anchor="middle" fill="#a7f3d0" font-size="18" font-weight="bold">リロードしても残る！</text>
+</svg>

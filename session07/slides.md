@@ -23,9 +23,6 @@ style: |
   table {
     font-size: 22px;
   }
-  div.mermaid {
-    all: unset;
-  }
 ---
 
 # 第7回: フロントエンドとバックエンドの結合
@@ -66,19 +63,7 @@ style: |
 
 ## これまでの6回で学んだ技術の全体像
 
-<div class="mermaid">
-graph LR
-    subgraph Frontend["フロントエンド（ブラウザで動く）"]
-        S2["第2回 HTML"]
-        S3["第3回 CSS"]
-        S4["第4回 JS"]
-    end
-    subgraph Backend["バックエンド（サーバーで動く）"]
-        S5["第5回 Python/FastAPI"]
-        S6["第6回 SQLite/REST API"]
-    end
-    Frontend <-->|"HTTP通信（JSON）← 今回ここを繋ぐ！"| Backend
-</div>
+![width:1100](images/architecture.svg)
 
 今回は **「繋ぐ」** 回です。
 
@@ -87,36 +72,14 @@ graph LR
 
 # データの流れ -- 全体図（前半）
 
-<div class="mermaid">
-sequenceDiagram
-    participant U as ユーザー
-    participant B as ブラウザ（JS）
-    participant S as FastAPI
-    participant D as SQLite
-    U->>B: ボタンを押す
-    Note over B: JavaScriptが実行される<br>fetch()でHTTPリクエスト生成
-    B->>S: HTTPリクエスト（例: POST /todos）
-    Note over S: Pythonでリクエスト処理
-    S->>D: データ保存
-</div>
+![height:480](images/data-flow-1.svg)
 
 ---
 
 
 # データの流れ -- 全体図（後半）
 
-<div class="mermaid">
-sequenceDiagram
-    participant U as ユーザー
-    participant B as ブラウザ（JS）
-    participant S as FastAPI
-    participant D as SQLite
-    D-->>S: 結果
-    Note over S: レスポンス生成（JSON）
-    S-->>B: HTTPレスポンス（例: {"id":1,"title":"買い物",...}）
-    Note over B: JSONをJSオブジェクトに変換<br>DOMを操作して画面を更新
-    B-->>U: 画面が変わる
-</div>
+![height:480](images/data-flow-2.svg)
 
 ---
 
@@ -148,26 +111,14 @@ sequenceDiagram
 
 **フロントエンドだけの場合**
 
-<div class="mermaid">
-graph TD
-    A1["JavaScript<br>配列にデータ保存"]
-    A1 -.- A2["メモリ上にしかない<br>リロードすると消える！"]
-</div>
+![width:520](images/frontend-only.svg)
 
 </div>
 <div>
 
 **バックエンドがある場合**
 
-<div class="mermaid">
-graph TD
-    B1["JavaScript<br>fetch()でデータ送信"]
-    B2["FastAPI<br>受け取ったデータをDBに保存"]
-    B3["SQLite<br>ファイルに永続化<br>リロードしても残る！"]
-    B1 -->|"HTTP"| B2
-    B2 -->|"HTTP"| B1
-    B2 --> B3
-</div>
+![width:520](images/with-backend.svg)
 
 </div>
 </div>
@@ -380,21 +331,7 @@ JavaScriptオブジェクト  ←──JSON.parse()────   JSON文字列
 
 # 追加ボタンの処理フロー
 
-<div class="mermaid">
-sequenceDiagram
-    participant U as ユーザー
-    participant B as ブラウザ（JavaScript）
-    participant S as サーバー（FastAPI）
-    participant D as SQLite
-    U->>B: "牛乳を買う" を入力し[追加]クリック
-    Note over B: input要素から値を取得 JSON.stringify()で変換
-    B->>S: POST /todos {"title":"牛乳を買う"}
-    Note over S: リクエスト受信
-    S->>D: INSERT
-    D-->>S: 結果
-    S-->>B: {"id":4,"title":"牛乳を買う","done":false}
-    Note over B: getTodos()で一覧を再取得DOM更新（画面に反映）
-</div>
+![height:560](images/post-flow.svg)
 
 ---
 
@@ -438,16 +375,7 @@ http://localhost:8000   ← バックエンド（FastAPIサーバー）
 
 # CORSエラーが起きる流れ
 
-<div class="mermaid">
-sequenceDiagram
-    participant B as ブラウザ（localhost:5500）
-    participant S as サーバー（localhost:8000）
-    Note over B: fetch("/todos") を実行<br>オリジンが違う！許可を確認しよう
-    B->>S: プリフライトリクエスト（OPTIONS /todos）
-    Note over S: CORSの設定？何も設定してないよ
-    S-->>B: レスポンス（許可ヘッダなし）
-    Note over B: 許可されてない！通信をブロック！<br>Console: "CORS error"
-</div>
+![height:520](images/cors-error.svg)
 
 ---
 
@@ -480,19 +408,7 @@ app.add_middleware(
 
 # CORS解決後の通信フロー
 
-<div class="mermaid">
-sequenceDiagram
-    participant B as ブラウザ（localhost:5500）
-    participant S as サーバー（localhost:8000）
-    Note over B: fetch("/todos") を実行
-    B->>S: プリフライトリクエスト（OPTIONS /todos）
-    Note over S: CORSMiddleware設定済み！許可します
-    S-->>B: Access-Control-Allow-Origin: *
-    Note over B: 許可された！通信OK
-    B->>S: 本来のリクエスト（GET /todos）
-    Note over S: 通常どおり処理
-    S-->>B: JSONデータ（正常にデータを受け取れる！）
-</div>
+![height:600](images/cors-resolved.svg)
 
 ---
 
@@ -564,19 +480,7 @@ async function deleteTodo(id) {
 
 ## 操作のたびに一覧を再取得する（前半）
 
-<div class="mermaid">
-sequenceDiagram
-    participant U as ユーザー
-    participant B as ブラウザ（JS）
-    participant S as サーバー
-    participant D as DB
-    U->>B: チェックボックスクリック
-    Note over B: toggleTodo(id, done) を呼ぶ
-    B->>S: PUT /todos/{id}（完了状態を切替）
-    S->>D: DBを更新
-    D-->>S: 結果
-    S-->>B: レスポンス
-</div>
+![height:540](images/update-flow-1.svg)
 
 ---
 
@@ -585,16 +489,7 @@ sequenceDiagram
 
 ## 操作のたびに一覧を再取得する（後半）
 
-<div class="mermaid">
-sequenceDiagram
-    participant U as ユーザー
-    participant B as ブラウザ（JS）
-    participant S as サーバー
-    participant D as DB
-    Note over B: getTodos() で一覧を再取得
-    B->>S: GET /todos
-    S-->>B: 最新データ（renderTodos(data) でDOM再描画）
-</div>
+![height:340](images/update-flow-2.svg)
 
 **ポイント:** 操作が完了したら **必ずサーバーから最新の一覧を取得し直す**。
 これにより、画面とサーバーのデータが常に同期される。
@@ -729,23 +624,14 @@ exercise/
 
 **配信前（異なるオリジン → CORS必要）**
 
-<div class="mermaid">
-graph LR
-    B1["http://localhost:5500<br>フロントエンド"]
-    B2["http://localhost:8000<br>バックエンド"]
-    B1 <-->|"CORS必要"| B2
-</div>
+![width:520](images/before-static.svg)
 
 </div>
 <div>
 
 **配信後（同一オリジン → CORS不要！）**
 
-<div class="mermaid">
-graph LR
-    A3["http://localhost:8000"] --- A1["/ フロントエンド<br>（index.html）"]
-    A3 --- A2["/todos API<br>バックエンド"]
-</div>
+![width:520](images/after-static.svg)
 
 </div>
 </div>
@@ -839,8 +725,3 @@ const response = await fetch("/todos");
 2. `main.py` のGitHubのURL
    - 例: `https://github.com/ユーザー名/リポジトリ名/blob/main/session07/exercise/main.py`
 
-
-<script type="module">
-import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-mermaid.initialize({ startOnLoad: true, theme: 'dark' });
-</script>
