@@ -8,5 +8,7 @@ RUN apt-get update && apt-get install -y \
     iputils-ping \
     dnsutils \
     sqlite3 \
+    chromium \
+    fonts-noto-cjk \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
