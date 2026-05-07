@@ -23,9 +23,6 @@ style: |
   table {
     font-size: 22px;
   }
-  div.mermaid {
-    all: unset;
-  }
 ---
 
 # 第6回: データベース（SQLite）& REST API
@@ -129,13 +126,7 @@ with open("todos.json", "w") as f:
 
 ## データベースの位置づけ
 
-<div class="mermaid">
-graph LR
-    A["ブラウザ（HTML/JS）\nフロントエンド"] -->|"HTTPリクエスト"| B["サーバー（Python）\nバックエンド"]
-    B -->|"レスポンス"| A
-    B -->|"SQLクエリ"| C["データベース（SQLite）\ntodo.db"]
-    C -->|"結果"| B
-</div>
+![width:1100](images/db-position.svg)
 
 ブラウザ → サーバー → データベース の順番でデータが流れます。
 
@@ -443,25 +434,7 @@ URLとメソッドの組み合わせで、何をするかが決まります。
 
 ## CRUDとHTTPメソッドの対応図
 
-<div class="mermaid">
-graph LR
-    subgraph SQL["SQL文"]
-        C_SQL["INSERT INTO"]
-        R_SQL["SELECT"]
-        U_SQL["UPDATE SET"]
-        D_SQL["DELETE FROM"]
-    end
-    subgraph API["REST API"]
-        C_API["POST /todos"]
-        R_API["GET /todos"]
-        U_API["PUT /todos/1"]
-        D_API["DELETE /todos/1"]
-    end
-    C_SQL -->|"Pythonで変換"| C_API
-    R_SQL -->|"Pythonで変換"| R_API
-    U_SQL -->|"Pythonで変換"| U_API
-    D_SQL -->|"Pythonで変換"| D_API
-</div>
+![height:430](images/crud-mapping.svg)
 
 SQL操作とHTTPメソッドが **1対1で対応** しています。
 
@@ -887,8 +860,3 @@ session06/
 
 2. `main.py` のGitHubのURL
    - 例: `https://github.com/ユーザー名/リポジトリ名/blob/main/session06/exercise/main.py`
-
-<script type="module">
-import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-mermaid.initialize({ startOnLoad: true, theme: 'dark' });
-</script>

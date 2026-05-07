@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1240 460" font-family="'Hiragino Sans', 'Yu Gothic', 'Meiryo', 'Noto Sans CJK JP', sans-serif">
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#60a5fa"/>
+    </marker>
+  </defs>
+
+  <rect x="10" y="20" width="500" height="430" rx="12" fill="#78350f" fill-opacity="0.18" stroke="#d97706" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="260" y="56" text-anchor="middle" fill="#fde68a" font-size="22" font-weight="bold">SQL文</text>
+
+  <rect x="60" y="80" width="400" height="60" rx="8" fill="#78350f" stroke="#d97706" stroke-width="2"/>
+  <text x="260" y="118" text-anchor="middle" fill="#fde68a" font-size="22" font-weight="bold" font-family="'Menlo','Consolas',monospace">INSERT INTO</text>
+
+  <rect x="60" y="170" width="400" height="60" rx="8" fill="#78350f" stroke="#d97706" stroke-width="2"/>
+  <text x="260" y="208" text-anchor="middle" fill="#fde68a" font-size="22" font-weight="bold" font-family="'Menlo','Consolas',monospace">SELECT</text>
+
+  <rect x="60" y="260" width="400" height="60" rx="8" fill="#78350f" stroke="#d97706" stroke-width="2"/>
+  <text x="260" y="298" text-anchor="middle" fill="#fde68a" font-size="22" font-weight="bold" font-family="'Menlo','Consolas',monospace">UPDATE SET</text>
+
+  <rect x="60" y="350" width="400" height="60" rx="8" fill="#78350f" stroke="#d97706" stroke-width="2"/>
+  <text x="260" y="388" text-anchor="middle" fill="#fde68a" font-size="22" font-weight="bold" font-family="'Menlo','Consolas',monospace">DELETE FROM</text>
+
+  <rect x="730" y="20" width="500" height="430" rx="12" fill="#1e3a8a" fill-opacity="0.18" stroke="#60a5fa" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="980" y="56" text-anchor="middle" fill="#93c5fd" font-size="22" font-weight="bold">REST API</text>
+
+  <rect x="780" y="80" width="400" height="60" rx="8" fill="#1e3a8a" stroke="#3b82f6" stroke-width="2"/>
+  <text x="980" y="118" text-anchor="middle" fill="#dbeafe" font-size="22" font-weight="bold" font-family="'Menlo','Consolas',monospace">POST /todos</text>
+
+  <rect x="780" y="170" width="400" height="60" rx="8" fill="#1e3a8a" stroke="#3b82f6" stroke-width="2"/>
+  <text x="980" y="208" text-anchor="middle" fill="#dbeafe" font-size="22" font-weight="bold" font-family="'Menlo','Consolas',monospace">GET /todos</text>
+
+  <rect x="780" y="260" width="400" height="60" rx="8" fill="#1e3a8a" stroke="#3b82f6" stroke-width="2"/>
+  <text x="980" y="298" text-anchor="middle" fill="#dbeafe" font-size="22" font-weight="bold" font-family="'Menlo','Consolas',monospace">PUT /todos/1</text>
+
+  <rect x="780" y="350" width="400" height="60" rx="8" fill="#1e3a8a" stroke="#3b82f6" stroke-width="2"/>
+  <text x="980" y="388" text-anchor="middle" fill="#dbeafe" font-size="22" font-weight="bold" font-family="'Menlo','Consolas',monospace">DELETE /todos/1</text>
+
+  <line x1="465" y1="110" x2="775" y2="110" stroke="#60a5fa" stroke-width="2.5" marker-end="url(#arrow-blue)"/>
+  <line x1="465" y1="200" x2="775" y2="200" stroke="#60a5fa" stroke-width="2.5" marker-end="url(#arrow-blue)"/>
+  <line x1="465" y1="290" x2="775" y2="290" stroke="#60a5fa" stroke-width="2.5" marker-end="url(#arrow-blue)"/>
+  <line x1="465" y1="380" x2="775" y2="380" stroke="#60a5fa" stroke-width="2.5" marker-end="url(#arrow-blue)"/>
+
+  <text x="620" y="98" text-anchor="middle" fill="#93c5fd" font-size="14">Pythonで変換</text>
+  <text x="620" y="188" text-anchor="middle" fill="#93c5fd" font-size="14">Pythonで変換</text>
+  <text x="620" y="278" text-anchor="middle" fill="#93c5fd" font-size="14">Pythonで変換</text>
+  <text x="620" y="368" text-anchor="middle" fill="#93c5fd" font-size="14">Pythonで変換</text>
+</svg>
