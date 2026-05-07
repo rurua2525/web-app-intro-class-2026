@@ -327,7 +327,7 @@ CSSでは、**すべての要素は「箱（ボックス）」** として扱わ
 </div>
 <div>
 
-![ボックスモデルの構造](image.png)
+![ボックスモデルの構造](images/box-model.svg)
 
 </div>
 </div>
@@ -345,7 +345,7 @@ CSSでは、**すべての要素は「箱（ボックス）」** として扱わ
 </div>
 <div>
 
-![ボックスモデル: margin と padding](image.png)
+![ボックスモデル: margin と padding](images/box-model.svg)
 
 </div>
 </div>
@@ -440,14 +440,14 @@ CSSで要素を**横並び**にしたり、**中央配置**するための仕組
 
 **通常（display: flex なし）:**
 
-![通常のレイアウト](image1.png)
+![通常のレイアウト](images/flex-none.svg)
 
 </div>
 <div>
 
 **Flexbox（display: flex あり）:**
 
-![Flexboxのレイアウト](image2.png)
+![Flexboxのレイアウト](images/flex-on.svg)
 
 </div>
 </div>
@@ -463,7 +463,7 @@ CSSで要素を**横並び**にしたり、**中央配置**するための仕組
 }
 ```
 
-![height:410 justify-contentの例](image3.png)
+![height:410 justify-contentの例](images/justify-content.svg)
 
 ---
 
@@ -476,7 +476,7 @@ CSSで要素を**横並び**にしたり、**中央配置**するための仕組
 }
 ```
 
-![height:450 align-itemsの例](image4.png)
+![height:450 align-itemsの例](images/align-items.svg)
 
 ---
 
@@ -489,7 +489,7 @@ CSSで要素を**横並び**にしたり、**中央配置**するための仕組
 }
 ```
 
-![height:320 gapの例](image5.png)
+![height:320 gapの例](images/gap.svg)
 
 - `margin` で間隔を作るより、`gap` の方がシンプルで管理しやすい
 

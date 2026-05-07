@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 460" font-family="'Hiragino Sans', 'Yu Gothic', 'Meiryo', 'Noto Sans CJK JP', sans-serif">
+  <defs>
+    <marker id="arrow-emerald" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#34d399"/>
+    </marker>
+  </defs>
+
+  <!-- ===== gap なし ===== -->
+  <text x="60" y="46" fill="#93c5fd" font-size="20" font-weight="bold">gap なし</text>
+
+  <rect x="60" y="70" width="120" height="80" rx="10" fill="#1e3a8a" stroke="#3b82f6" stroke-width="2"/>
+  <text x="120" y="118" text-anchor="middle" fill="#dbeafe" font-size="24" font-weight="bold">A</text>
+
+  <rect x="180" y="70" width="120" height="80" rx="10" fill="#1e3a8a" stroke="#3b82f6" stroke-width="2"/>
+  <text x="240" y="118" text-anchor="middle" fill="#dbeafe" font-size="24" font-weight="bold">B</text>
+
+  <rect x="300" y="70" width="120" height="80" rx="10" fill="#1e3a8a" stroke="#3b82f6" stroke-width="2"/>
+  <text x="360" y="118" text-anchor="middle" fill="#dbeafe" font-size="24" font-weight="bold">C</text>
+
+  <!-- ===== gap: 16px ===== -->
+  <text x="60" y="246" fill="#93c5fd" font-size="20" font-weight="bold">gap: 16px</text>
+
+  <rect x="60" y="270" width="120" height="80" rx="10" fill="#064e3b" stroke="#10b981" stroke-width="2"/>
+  <text x="120" y="318" text-anchor="middle" fill="#a7f3d0" font-size="24" font-weight="bold">A</text>
+
+  <rect x="196" y="270" width="120" height="80" rx="10" fill="#064e3b" stroke="#10b981" stroke-width="2"/>
+  <text x="256" y="318" text-anchor="middle" fill="#a7f3d0" font-size="24" font-weight="bold">B</text>
+
+  <rect x="332" y="270" width="120" height="80" rx="10" fill="#064e3b" stroke="#10b981" stroke-width="2"/>
+  <text x="392" y="318" text-anchor="middle" fill="#a7f3d0" font-size="24" font-weight="bold">C</text>
+
+  <!-- gap 幅の矢印 1 (A-B 間) -->
+  <line x1="180" y1="378" x2="196" y2="378" stroke="#34d399" stroke-width="2" marker-start="url(#arrow-emerald)" marker-end="url(#arrow-emerald)"/>
+  <text x="188" y="406" text-anchor="middle" fill="#a7f3d0" font-size="16" font-weight="bold">16px</text>
+
+  <!-- gap 幅の矢印 2 (B-C 間) -->
+  <line x1="316" y1="378" x2="332" y2="378" stroke="#34d399" stroke-width="2" marker-start="url(#arrow-emerald)" marker-end="url(#arrow-emerald)"/>
+  <text x="324" y="406" text-anchor="middle" fill="#a7f3d0" font-size="16" font-weight="bold">16px</text>
+
+  <!-- 凡例 -->
+  <text x="540" y="318" fill="#cbd5e1" font-size="16">gap = フレックス／グリッド</text>
+  <text x="540" y="342" fill="#cbd5e1" font-size="16">アイテム間の隙間を一括指定</text>
+</svg>

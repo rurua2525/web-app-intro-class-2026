@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" font-family="'Hiragino Sans', 'Yu Gothic', 'Meiryo', 'Noto Sans CJK JP', sans-serif">
+  <defs>
+    <marker id="arrow-slate" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="40" text-anchor="middle" fill="#93c5fd" font-size="22" font-weight="bold">display: flex なし（通常フロー）</text>
+
+  <!-- 縦方向ラベルと矢印 -->
+  <text x="120" y="245" text-anchor="middle" fill="#cbd5e1" font-size="18" font-weight="bold">縦方向</text>
+  <line x1="120" y1="100" x2="120" y2="430" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arrow-slate)"/>
+
+  <!-- 要素A (primary blue) -->
+  <rect x="240" y="80" width="500" height="80" rx="10" fill="#1e3a8a" stroke="#3b82f6" stroke-width="2"/>
+  <text x="490" y="128" text-anchor="middle" fill="#dbeafe" font-size="24" font-weight="bold">要素A</text>
+
+  <!-- 要素B (cyan) -->
+  <rect x="240" y="200" width="500" height="80" rx="10" fill="#155e75" stroke="#06b6d4" stroke-width="2"/>
+  <text x="490" y="248" text-anchor="middle" fill="#cffafe" font-size="24" font-weight="bold">要素B</text>
+
+  <!-- 要素C (emerald) -->
+  <rect x="240" y="320" width="500" height="80" rx="10" fill="#064e3b" stroke="#10b981" stroke-width="2"/>
+  <text x="490" y="368" text-anchor="middle" fill="#a7f3d0" font-size="24" font-weight="bold">要素C</text>
+</svg>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" font-family="'Hiragino Sans', 'Yu Gothic', 'Meiryo', 'Noto Sans CJK JP', sans-serif">
+  <defs>
+    <marker id="arrow-slate" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+
+  <!-- margin (slate, dashed) -->
+  <rect x="20" y="20" width="860" height="520" rx="6" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="8 6"/>
+  <text x="450" y="50" text-anchor="middle" fill="#cbd5e1" font-size="22" font-weight="bold">マージン (margin)</text>
+
+  <!-- border (primary blue) -->
+  <rect x="80" y="80" width="740" height="420" rx="6" fill="#1e3a8a" stroke="#3b82f6" stroke-width="3"/>
+  <text x="450" y="112" text-anchor="middle" fill="#dbeafe" font-size="22" font-weight="bold">境界 (border)</text>
+
+  <!-- padding (cyan) -->
+  <rect x="120" y="135" width="660" height="335" rx="6" fill="#155e75" stroke="#06b6d4" stroke-width="2"/>
+  <text x="450" y="167" text-anchor="middle" fill="#cffafe" font-size="22" font-weight="bold">パディング (padding)</text>
+
+  <!-- content (emerald, dashed) -->
+  <rect x="170" y="195" width="560" height="240" rx="6" fill="#064e3b" stroke="#10b981" stroke-width="2" stroke-dasharray="6 5"/>
+  <text x="450" y="325" text-anchor="middle" fill="#a7f3d0" font-size="24" font-weight="bold">コンテンツ</text>
+
+  <!-- width arrow (horizontal) -->
+  <line x1="195" y1="240" x2="705" y2="240" stroke="#cbd5e1" stroke-width="2" marker-start="url(#arrow-slate)" marker-end="url(#arrow-slate)"/>
+  <text x="610" y="232" text-anchor="middle" fill="#cbd5e1" font-size="18" font-weight="bold">幅 (width)</text>
+
+  <!-- height arrow (vertical) -->
+  <line x1="220" y1="220" x2="220" y2="410" stroke="#cbd5e1" stroke-width="2" marker-start="url(#arrow-slate)" marker-end="url(#arrow-slate)"/>
+  <text x="278" y="395" text-anchor="middle" fill="#cbd5e1" font-size="18" font-weight="bold">高さ (height)</text>
+</svg>

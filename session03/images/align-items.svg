@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1300 620" font-family="'Hiragino Sans', 'Yu Gothic', 'Meiryo', 'Noto Sans CJK JP', sans-serif">
+  <defs>
+    <marker id="arrow-slate" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+
+  <text x="650" y="36" text-anchor="middle" fill="#93c5fd" font-size="22" font-weight="bold">align-items（交差軸＝縦方向の配置）</text>
+
+  <!-- ===== flex-start ===== -->
+  <text x="160" y="86" text-anchor="middle" fill="#93c5fd" font-size="20" font-weight="bold">flex-start</text>
+  <rect x="40" y="100" width="240" height="380" rx="8" fill="#1e3a8a" fill-opacity="0.25" stroke="#60a5fa" stroke-width="2" stroke-dasharray="8 5"/>
+  <!-- A (tall) -->
+  <rect x="80" y="120" width="70" height="160" rx="8" fill="#1e3a8a" stroke="#3b82f6" stroke-width="2"/>
+  <text x="115" y="206" text-anchor="middle" fill="#dbeafe" font-size="22" font-weight="bold">A</text>
+  <!-- B (short) -->
+  <rect x="170" y="120" width="70" height="90" rx="8" fill="#1e3a8a" stroke="#3b82f6" stroke-width="2"/>
+  <text x="205" y="172" text-anchor="middle" fill="#dbeafe" font-size="22" font-weight="bold">B</text>
+
+  <!-- ===== center ===== -->
+  <text x="450" y="86" text-anchor="middle" fill="#93c5fd" font-size="20" font-weight="bold">center</text>
+  <rect x="330" y="100" width="240" height="380" rx="8" fill="#1e3a8a" fill-opacity="0.25" stroke="#60a5fa" stroke-width="2" stroke-dasharray="8 5"/>
+  <!-- center axis hint -->
+  <line x1="345" y1="290" x2="555" y2="290" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <!-- A (tall) -->
+  <rect x="370" y="210" width="70" height="160" rx="8" fill="#155e75" stroke="#06b6d4" stroke-width="2"/>
+  <text x="405" y="296" text-anchor="middle" fill="#cffafe" font-size="22" font-weight="bold">A</text>
+  <!-- B (short) -->
+  <rect x="460" y="245" width="70" height="90" rx="8" fill="#155e75" stroke="#06b6d4" stroke-width="2"/>
+  <text x="495" y="297" text-anchor="middle" fill="#cffafe" font-size="22" font-weight="bold">B</text>
+
+  <!-- ===== flex-end ===== -->
+  <text x="740" y="86" text-anchor="middle" fill="#93c5fd" font-size="20" font-weight="bold">flex-end</text>
+  <rect x="620" y="100" width="240" height="380" rx="8" fill="#1e3a8a" fill-opacity="0.25" stroke="#60a5fa" stroke-width="2" stroke-dasharray="8 5"/>
+  <!-- A (tall) -->
+  <rect x="660" y="300" width="70" height="160" rx="8" fill="#064e3b" stroke="#10b981" stroke-width="2"/>
+  <text x="695" y="386" text-anchor="middle" fill="#a7f3d0" font-size="22" font-weight="bold">A</text>
+  <!-- B (short) -->
+  <rect x="750" y="370" width="70" height="90" rx="8" fill="#064e3b" stroke="#10b981" stroke-width="2"/>
+  <text x="785" y="422" text-anchor="middle" fill="#a7f3d0" font-size="22" font-weight="bold">B</text>
+
+  <!-- ===== stretch ===== -->
+  <text x="1030" y="86" text-anchor="middle" fill="#93c5fd" font-size="20" font-weight="bold">stretch（既定値）</text>
+  <rect x="910" y="100" width="240" height="380" rx="8" fill="#1e3a8a" fill-opacity="0.25" stroke="#60a5fa" stroke-width="2" stroke-dasharray="8 5"/>
+  <!-- A (full height) -->
+  <rect x="950" y="120" width="70" height="340" rx="8" fill="#1e3a8a" stroke="#3b82f6" stroke-width="2"/>
+  <text x="985" y="296" text-anchor="middle" fill="#dbeafe" font-size="22" font-weight="bold">A</text>
+  <!-- B (full height) -->
+  <rect x="1040" y="120" width="70" height="340" rx="8" fill="#1e3a8a" stroke="#3b82f6" stroke-width="2"/>
+  <text x="1075" y="296" text-anchor="middle" fill="#dbeafe" font-size="22" font-weight="bold">B</text>
+  <!-- height arrow indicator -->
+  <line x1="1180" y1="105" x2="1180" y2="475" stroke="#94a3b8" stroke-width="2" marker-start="url(#arrow-slate)" marker-end="url(#arrow-slate)"/>
+
+  <!-- 凡例 -->
+  <text x="650" y="540" text-anchor="middle" fill="#cbd5e1" font-size="16">破線の枠 = フレックスコンテナ（cross axis = 縦方向）</text>
+  <text x="650" y="568" text-anchor="middle" fill="#cbd5e1" font-size="16">A, B = 高さの異なるフレックスアイテム（stretch ではコンテナ高に揃う）</text>
+</svg>
