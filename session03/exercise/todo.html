@@ -4,67 +4,68 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TODO App</title>
-    <!-- ヒント: 外部CSSファイルを読み込もう -->
-   <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="style (5).css" />
   </head>
   <body>
-    <!-- ヘッダー（第2回の正解にclass名を追加） -->
-    <header class="header">
-      <h1 >TODO App</h1>
-    </header>
 
-    <!-- メインコンテンツ -->
     <main class="todo-card">
-      <!-- TODO入力エリア -->
-      <form id="todo-form" class="input-area">
-        <input
-          type="text"
-          id="todo-input"
-          class="todo-input"
-          placeholder="新しいTODOを入力..."
-        />
-        <button type="submit" class="todo-button">追加</button>
-      </form>
+      
+      <header class="header">
+        <h1>TODO App</h1>
+      </header>
 
-      <!-- TODOリスト -->
-      <ul id="todo-list" class="todo-list">
-        <li class="todo-item">
-          <label class="todo-label">
-            <input type="checkbox" class="todo-checkbox" />
-            <span class="todo-title">買い物に行く</span>
-          </label>
-          <button class="delete-button">削除</button>
-        </li>
+      <div class="todo-main">
+        
+        <form id="todo-form" class="input-area">
+          <input
+            type="text"
+            id="todo-input"
+            class="todo-input"
+            placeholder="新しいTODOを入力..."
+          />
+          <button type="submit" class="todo-button">追加</button>
+        </form>
 
-        <li class="todo-item">
-          <label class="todo-label">
-            <input type="checkbox" class="todo-checkbox" />
-            <span class="todo-title">レポートを書く</span>
-          </label>
-          <button class="delete-button">削除</button>
-        </li>
+        <ul id="todo-list" class="todo-list">
+          <li class="todo-item">
+            <label class="todo-label">
+              <input type="checkbox" class="todo-checkbox" />
+              <span class="todo-title">買い物に行く</span>
+            </label>
+            <button class="delete-button">削除</button>
+          </li>
 
-        <li class="todo-item done">
-          <label class="todo-label">
-            <input type="checkbox" class="todo-checkbox" checked />
-            <span class="todo-title">本を読む</span>
-          </label>
-          <button class="delete-button">削除</button>
-        </li>
+          <li class="todo-item">
+            <label class="todo-label">
+              <input type="checkbox" class="todo-checkbox" />
+              <span class="todo-title">レポートを書く</span>
+            </label>
+            <button class="delete-button">削除</button>
+          </li>
 
-        <li class="todo-item">
-          <label class="todo-label">
-            <input type="checkbox" class="todo-checkbox" />
-            <span class="todo-title">部屋を掃除する</span>
-          </label>
-          <button class="delete-button">削除</button>
-        </li>
-      </ul>
+          <li class="todo-item done">
+            <label class="todo-label">
+              <input type="checkbox" class="todo-checkbox" checked />
+              <span class="todo-title">本を読む</span>
+            </label>
+            <button class="delete-button">削除</button>
+          </li>
+
+          <li class="todo-item">
+            <label class="todo-label">
+              <input type="checkbox" class="todo-checkbox" />
+              <span class="todo-title">部屋を掃除する</span>
+            </label>
+            <button class="delete-button">削除</button>
+          </li>
+        </ul>
+        </div>
+
+      <footer class="footer">
+        <p>&copy; 2026 TODO App</p>
+      </footer>
+
     </main>
 
-    <!-- フッター -->
-    <footer class="footer">
-      <p>&copy; 2026 TODO App</p>
-    </footer>
   </body>
 </html>
