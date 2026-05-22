@@ -71,6 +71,11 @@ body {
   /* ヒント: display: flex, align-items: center, justify-content: space-between
              padding: 12px 16px, margin-bottom: 8px
              background-color: #f9fafb, border: 1px solid #e5e7eb, border-radius: 8px */
+   color:  　aqua;
+   text-align: center; 
+   background-color: rgb(0, 255, 26);
+   width: 100;
+   display: block
 }
 
 .todo-item:hover {
