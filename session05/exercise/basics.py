@@ -16,19 +16,50 @@
 """
 
 # ヒント: TODOリストを作成する
-#   todos = [
-#       {"id": 1, "title": "課題を出す", "done": False},
-#       {"id": 2, "title": "買い物する", "done": True},
-#       {"id": 3, "title": "自分のTODO", "done": False},
-#   ]
+todos = [
+    {"id": 1, "title": "課題を出す", "done": False},
+    {"id": 2, "title": "買い物する", "done": True},
+    {"id": 3, "title": "自分のTODO", "done": False},
+]
+
+# show_todos 関数を実装する
+def show_todos(todo_list):
+    for todo in todo_list:
+        status = "[x]" if todo["done"] else "[ ]"
+        print(f"'{status} {todo['id']}: {todo['title']}'")
+
+# show_todos(todos) を呼び出す
+show_todos(todos)
+
+@app.get("/hello/{松﨑}")
+def hello(name: str):
+return {"message": f"こんにちは、{松﨑}さん！"}
+
+{
+"id": 1,
+"title": "レポートを書く"
+,
+"done": false
+}
+
+todos = [
+  {"id": 1,"title": "レポートを書く","done": False},
+  {"id": 2,"title": "買い物に行く","done": True},
+  {"id": 3,"title": "自分のTODOを追加","done": False},
+]
 
 
-# ヒント: TODOを1件ずつ表示する関数を作成する
-#   def show_todos(todo_list):
-#       for todo in todo_list:
-#           status = "[x]" if todo["done"] else "[ ]"
-#           print(f'{status} {todo["id"]}: {todo["title"]}')
+@app.get("/todos")
+def get_todos():
+  return todos
 
 
-# ヒント: 関数を呼び出して動作を確認する
-#   show_todos(todos)
+@app.get("/todos")
+def get_todo(id):
+    index = int(id) - 1
+    return todos[index]
+    
+
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000)
