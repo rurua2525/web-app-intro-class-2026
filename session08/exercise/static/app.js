@@ -107,29 +107,29 @@ function renderTodos(todos) {
     //   createElement + textContent に書き換えてください。
     //
     //   修正後（第7回と同じ構造）:
-    //     const label = document.createElement("label");
-    //     label.className = "todo-label";
-    //
-    //     const checkbox = document.createElement("input");
-    //     checkbox.type = "checkbox";
-    //     checkbox.className = "todo-checkbox";
-    //     checkbox.checked = todo.done;
-    //     checkbox.addEventListener("change", () => toggleTodo(todo.id, todo.done));
-    //
-    //     const titleSpan = document.createElement("span");
-    //     titleSpan.className = "todo-title";
-    //     titleSpan.textContent = todo.title;
-    //
-    //     label.appendChild(checkbox);
-    //     label.appendChild(titleSpan);
-    //
-    //     const deleteBtn = document.createElement("button");
-    //     deleteBtn.className = "delete-button";
-    //     deleteBtn.textContent = "削除";
-    //     deleteBtn.addEventListener("click", () => deleteTodo(todo.id));
-    //
-    //     li.appendChild(label);
-    //     li.appendChild(deleteBtn);
+         const label = document.createElement("label");
+         label.className = "todo-label";
+    
+         const checkbox = document.createElement("input");
+         checkbox.type = "checkbox";
+         checkbox.className = "todo-checkbox";
+         checkbox.checked = todo.done;
+         checkbox.addEventListener("change", () => toggleTodo(todo.id, todo.done));
+    
+         const titleSpan = document.createElement("span");
+         titleSpan.className = "todo-title";
+         titleSpan.textContent = todo.title;
+    
+         label.appendChild(checkbox);
+         label.appendChild(titleSpan);
+    
+         const deleteBtn = document.createElement("button");
+         deleteBtn.className = "delete-button";
+         deleteBtn.textContent = "削除";
+         deleteBtn.addEventListener("click", () => deleteTodo(todo.id));
+    
+         li.appendChild(label);
+         li.appendChild(deleteBtn);
 
     // 危険！ innerHTML を使用（XSS脆弱性あり）
     li.innerHTML = `
@@ -152,14 +152,14 @@ function renderTodos(todos) {
 
 // TODO(実習5): showError 関数を実装してください
 //   ヒント:
-//   function showError(message) {
-//     const errorDiv = document.getElementById("error-message");
-//     errorDiv.textContent = message;
-//     errorDiv.style.display = "block";
-//     setTimeout(() => {
-//       errorDiv.style.display = "none";
-//     }, 5000);
-//   }
+   function showError(message) {
+     const errorDiv = document.getElementById("error-message");
+     errorDiv.textContent = message;
+      errorDiv.style.display = "block";
+     setTimeout(() => {
+       errorDiv.style.display = "none";
+     }, 5000);
+   }
 
 // ============================================================
 // イベントリスナー
